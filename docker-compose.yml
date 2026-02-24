@@ -1,0 +1,13 @@
+services:
+  todo-plugin:
+    build:
+      context: ./plugins/todo
+    ports:
+      - "5003:5003"
+    environment:
+      - TODO_DB_PATH=/data/todo.db
+    volumes:
+      - todo-data:/data
+
+volumes:
+  todo-data:
