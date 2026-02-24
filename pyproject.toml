@@ -1,0 +1,24 @@
+[project]
+name = "open-plugins"
+version = "0.1.0"
+description = "Registry + validator + examples for OpenAI-plugin-spec style plugins."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.6",
+  "pyyaml>=6.0.1",
+  "httpx>=0.27.0",
+]
+
+[project.scripts]
+open-plugins = "open_plugins.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "core"}
+
+[tool.setuptools.packages.find]
+where = ["core"]
